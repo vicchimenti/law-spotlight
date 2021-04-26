@@ -4,4 +4,4 @@ A content type with a feature profile image, a header, a description, a source a
 
 ## TODO
 
-- [x] Make Bootstrap 5 ready
+- [x] Make text/html Bootstrap 5 ready
