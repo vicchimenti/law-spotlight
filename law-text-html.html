@@ -1,0 +1,29 @@
+<div class="contentItem spotlightWrapper standardContent noGap" id="id<t4 type='meta' meta='content_id' />" data-position-default="Main" data-position-selected="Main">
+  <t4 type="meta" meta="html_anchor" />
+     
+    <div id="spotlightImg" class="spotlightImage col-xs-12 col-sm-5 col-md-4 col-md-push-1">
+      <span class="spotlightArrow" aria-hidden="false"></span>
+      <t4 type="content" name="Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a class=&quot;spotlightImageFilter&quot; href=&quot;<t4 type='content' name='Image Link' output='linkurl' modifiers='nav_sections' />&quot;>" />
+      <img src="<t4 type='content' name='Spotlight Image' output='imageurl' />" alt="<t4 type='content' name='Source' output='normal' modifiers='striptags,htmlentities' />">
+      <t4 type="content" name="Link" output="selective-output" modifiers="nav_sections" process-format="true" format="</a>" />
+    </div>
+    
+	<div id="spotlightTextArea" class="spotlightCopy col-xs-12 col-sm-7 col-md-6 col-md-push-1">
+	  <h3><t4 type="content" name="Text Title" output="normal" modifiers="striptags,htmlentities" /></h3>
+	  <p class="spotlightCopyBody">
+	    <t4 type="content" name="Text" output="normal" modifiers="striptags,htmlentities" />
+	  </p>
+      <div class="red-border-top visible-xs col-xs-1"></div>
+      <div class="spotlightCopyCitation red-border-side">
+	  <div class="spotlightCopyCitation">
+        <t4 type="content" name="Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a class=&quot;spotlightBioLink&quot; href=&quot;<t4 type='content' name='Bio Link' output='linkurl' modifiers='nav_sections' />&quot;>" />
+          <t4 type="content" name="Source" output="selective-output" modifiers="nav_sections" format='<span class="spotlightSource">$value</span>' />
+          <t4 type="content" name="Affiliation" output="selective-output" modifiers="nav_sections" format='<span class="spotlightAffiliation">$value</span>' />
+        <t4 type="content" name="Link" output="selective-output" modifiers="nav_sections" process-format="true" format="</a>" />
+      </div>
+      
+	</div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+
