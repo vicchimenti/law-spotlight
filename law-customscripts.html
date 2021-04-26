@@ -1,0 +1,98 @@
+<script>
+    //Getting current spotlights content id to allow multiple spotlights
+    var contentId = "#id<t4 type='meta' meta='content_id' /> ";
+    var mobile = ($(window).width() < 992); //Checking if mobile
+
+    //[Currently not in use but still practical funciton for reference]
+    //Function to check if spotlight body is too long for its size
+    function checkBodySize() {
+
+        //Checking if on mobile size
+        mobile = ($(window).width() < 992);
+
+        //Getting orignal copy
+        var copy = $(contentId + ".spotlightInvisibleCopyBody").text();
+
+        //Refilling body
+        $(contentId + ".spotlightCopyBody").text(copy);
+
+        //Getting desired height
+        var desiredHeight = $(contentId + ".spotlightCopy").outerHeight() - 100;
+        if (mobile) desiredHeight = 500;
+
+        //Checking to see if spotlight body is too long
+        if ($(contentId + ".spotlightCopyBody").outerHeight() > desiredHeight) {
+            var currentText = "";
+            var newText = "";
+            var i = 0;
+
+            //Shrinking Body Until its the right size
+            while (($(contentId + ".spotlightCopyBody").outerHeight() > desiredHeight) && (i < 800)) {
+
+                //Taking away one character at a time
+                currentText = $(contentId + ".spotlightCopyBody").text();
+                newText = currentText.substr(0, currentText.length - 1);
+
+                $(contentId + ".spotlightCopyBody").text(newText);
+
+                i++;
+            }
+
+            //Adding "... to end"
+            newText = currentText.substr(0, currentText.length - 4);
+            $(contentId + ".spotlightCopyBody").text(newText + "...")
+        }
+    }
+
+    //On Page Load
+    $(document).ready(function () {
+        
+        //Resetting contentId
+        var contentId = "#id<t4 type='meta' meta='content_id' /> ";
+
+        //Changing Color of Divs to Accent Color
+        var desiredColor = '<t4 type="content" name="Accent Color" output="normal" display_field="name" />';
+        desiredColor = desiredColor.substr(desiredColor.indexOf("#"), 7);
+        $(contentId + '.spotlightCircleBorder').css('stroke', desiredColor);
+        $(contentId + '.spotlightCircleBorderMobile').css('stroke', desiredColor);
+        $(contentId + '.spotlightArrow').css('stroke', desiredColor);
+        $(contentId + '.spotlightArrowMobile').css('stroke', desiredColor);
+        $(contentId + '.spotlightCopyTitle').css('color', desiredColor);
+        $(contentId + '.spotlightCopyCitation').css('border-color', desiredColor);
+        $(contentId + '.spotlightCopyCitationTopBorder').css('background-color', desiredColor);
+
+        //Resizing copy div and rechecking body at window resize 
+        $(window).resize(function () {
+
+            //Checking if mobile
+            mobile = ($(window).width() < 992);
+            if (!mobile) {
+                //Removing margin from bottom
+                $(contentId + ".spotlightCopy").css('margin-bottom', '0px');
+
+                //Getting heights of divs
+                var copyHeight = $(contentId + '.spotlightCopy').outerHeight();
+                var svgHeight = $(contentId + ".spotlightSvg").outerHeight();
+
+                //Setting display height to copy height
+                $(contentId + ".spotlightDisplay").css('height', copyHeight + 'px');
+
+                //Checking if svg height is bigger than its container
+                if (svgHeight > copyHeight) {
+                    //Setting both to height of svg if so
+                    $(contentId + ".spotlightCopy").css('height', svgHeight + 'px');
+                    $(contentId + ".spotlightDisplay").css('height', svgHeight + 'px');
+                }
+            }
+            else {
+                //Adding margin to bottom
+                $(contentId + ".spotlightCopy").css('margin-bottom', '10px');
+            }
+
+        });
+
+        //Trigger resize event
+        $(window).resize();
+    });
+
+</script>
