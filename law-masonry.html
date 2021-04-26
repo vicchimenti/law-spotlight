@@ -1,0 +1,28 @@
+<div class="contentItem tile tilewidth4" id="id<t4 type='meta' meta='content_id' />">
+  <t4 type="meta" meta="html_anchor" />
+  
+  <div class="spotlight spotlightBackgroundColor<t4 type='content' name='Background Color' output='normal' display_field='value' /> spotlightAccentColor<t4 type='content' name='Accent Color' output='normal' display_field='value' />" style="background-image: url(&quot; <t4 type='content' name='Banner Image' output='imageurl' />&quot;);" >
+    
+    <div class="spotlightImage col-xs-12 col-md-6">
+      <span class="spotlightArrow" aria-hidden="true"></span>
+      <t4 type="content" name="Image Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a class=&quot;spotlightImageFilter&quot; href=&quot;<t4 type='content' name='Image Link' output='linkurl' modifiers='nav_sections' />&quot;>" />
+      <img src="<t4 type='content' name='Spotlight Image' output='imageurl' />" alt="<t4 type='content' name='Source' output='normal' modifiers='striptags,htmlentities' />">
+      <t4 type="content" name="Image Link" output="selective-output" modifiers="nav_sections" process-format="true" format="</a>" />
+    </div>
+    
+	<div class="spotlightCopy col-xs-12 col-md-6">
+	  <h3><t4 type="content" name="Text Title" output="normal" modifiers="striptags,htmlentities" /></h3>
+	  <p class="spotlightCopyBody">
+	    <t4 type="content" name="Text" output="normal" modifiers="striptags,htmlentities" />
+	  </p>
+	  <div class="spotlightCopyCitation">
+        <t4 type="content" name="Bio Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a class=&quot;spotlightBioLink&quot; href=&quot;<t4 type='content' name='Bio Link' output='linkurl' modifiers='nav_sections' />&quot;>" />
+          <t4 type="content" name="Source" output="selective-output" modifiers="nav_sections" format='<span class="spotlightSource">$value</span>' />
+          <t4 type="content" name="Affiliation" output="selective-output" modifiers="nav_sections" format='<span class="spotlightAffiliation">$value</span>' />
+        <t4 type="content" name="Bio Link" output="selective-output" modifiers="nav_sections" process-format="true" format="</a>" />
+      </div>
+      
+	</div>
+    <div class="clearfix"></div>
+  </div>
+</div>
