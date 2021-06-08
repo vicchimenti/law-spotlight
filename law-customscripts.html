@@ -1,3 +1,7 @@
 <script>
-    $( ".carousel-inner .carousel-item" ).first().addClass( "active" );
+
+    $( window ).on( "load", function() {
+        $( ".carousel-inner .carousel-item" ).first().addClass( "active" );
+    });
+    
 </script>
