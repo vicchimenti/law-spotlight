@@ -1,3 +1,17 @@
+/***
+ *      @author Pierce Harriz
+ *      @file law-organizer-masonry.js
+ *      @see Seattle University School of Law Faculty Spotlight Type
+ *      law/organizer/masonryfeed
+ *
+ *      This content layout will be the organizer layout and will link to the
+ *      full text layout to reveal the full article.
+ *
+ *      Document will write once when the page loads
+ *
+ *      @version 1.0
+ */
+
 importClass(com.terminalfour.publish.utils.BrokerUtils)
 
 function getValueFromTag (tag) {
