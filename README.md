@@ -6,3 +6,4 @@ A content type with a feature profile image, a header, a description, a source a
 
 - [x] Make text/html Bootstrap 5 ready
 - [] merge stylesheets
+- [] bring carousel to center
